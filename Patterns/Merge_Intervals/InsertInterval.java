@@ -11,22 +11,68 @@ class InsertInterval {
      *
      * Example 1: Input = [[1, 3], [5, 7], [8, 12]], new interval = [4,6]
      * Output: [[1,3], [4,7], [8,1]]
+     *
+     * Reflection: 9/10 mastered it. But needs some review.
      */
     public static List<Interval> insertBF(List<Interval> intervals, Interval newInterval) {
         List<Interval> mergedIntervals = new ArrayList<>();
-        //Redo
+        // first go through all list until we find a spot
+        // at the spot do merge_interval algorithm
+        // if not overlapping
+        // continue adding
+        // if overlapping, continue merging until find a non-overlapping interval
+        int i = 0;
+        while (i < intervals.size() && intervals.get(i).end < newInterval.start) {
+            mergedIntervals.add(intervals.get(i));
+            i++;
+        }
+        // we find a spot
+        int start = newInterval.start;
+        int end = newInterval.end;
+        while (i < intervals.size() && intervals.get(i).start <= end) {
+            start = Math.min(start, intervals.get(i).start);
+            end = Math.max(intervals.get(i).end, end);
+            i++;
+        }
+        mergedIntervals.add(new Interval(start, end));
+        while (i < intervals.size()) {
+            mergedIntervals.add(intervals.get(i));
+            i++;
+        }
         return mergedIntervals;
     }
 
     public static List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+        if (intervals == null || intervals.isEmpty())
+            return Arrays.asList(newInterval);
+
         List<Interval> mergedIntervals = new ArrayList<>();
-        // solution
+
+        int i = 0;
+        // skip (and add to output) all intervals that come before the 'newInterval'
+        while (i < intervals.size() && intervals.get(i).end < newInterval.start)
+            mergedIntervals.add(intervals.get(i++));
+
+        // merge all intervals that overlap with 'newInterval'
+        while (i < intervals.size() && intervals.get(i).start <= newInterval.end) {
+            newInterval.start = Math.min(intervals.get(i).start, newInterval.start);
+            newInterval.end = Math.max(intervals.get(i).end, newInterval.end);
+            i++;
+        }
+
+        // insert the newInterval
+        mergedIntervals.add(newInterval);
+
+        // add all the remaining intervals to the output
+        while (i < intervals.size())
+            mergedIntervals.add(intervals.get(i++));
+
         return mergedIntervals;
     }
 
     public static void main(String[] args) {
         bruteForce();
-        //solution();
+        solution();
     }
 
     public static void bruteForce() {
