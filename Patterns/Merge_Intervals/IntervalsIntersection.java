@@ -18,6 +18,12 @@ public class IntervalsIntersection {
      * Output: [5, 7], [9, 10]
      * Explanation: The output list contains the common intervals between the two lists.
      */
+    public static Interval[] mergeBF(Interval[] arr1, Interval[] arr2) {
+        List<Interval> intervalsIntersection = new ArrayList<Interval>();
+        int i, j = 0;
+        return intervalsIntersection.toArray(new Interval[intervalsIntersection.size()]);
+    }
+
     public static Interval[] merge(Interval[] arr1, Interval[] arr2) {
         List<Interval> intervalsIntersection = new ArrayList<Interval>();
         // TODO: Write your code here
@@ -25,6 +31,28 @@ public class IntervalsIntersection {
     }
 
     public static void main(String[] args) {
+        bruteFroce();
+        //solution();
+    }
+
+    public static void bruteFroce() {
+        Interval[] input1 = new Interval[]{new Interval(1, 3), new Interval(5, 6), new Interval(7, 9)};
+        Interval[] input2 = new Interval[]{new Interval(2, 3), new Interval(5, 7)};
+        Interval[] result = IntervalsIntersection.mergeBF(input1, input2);
+        System.out.print("Intervals Intersection: ");
+        for (Interval interval : result)
+            System.out.print("[" + interval.start + "," + interval.end + "] ");
+        System.out.println();
+
+        input1 = new Interval[]{new Interval(1, 3), new Interval(5, 7), new Interval(9, 12)};
+        input2 = new Interval[]{new Interval(5, 10)};
+        result = IntervalsIntersection.mergeBF(input1, input2);
+        System.out.print("Intervals Intersection: ");
+        for (Interval interval : result)
+            System.out.print("[" + interval.start + "," + interval.end + "] ");
+    }
+
+    public static void solution() {
         Interval[] input1 = new Interval[]{new Interval(1, 3), new Interval(5, 6), new Interval(7, 9)};
         Interval[] input2 = new Interval[]{new Interval(2, 3), new Interval(5, 7)};
         Interval[] result = IntervalsIntersection.merge(input1, input2);
