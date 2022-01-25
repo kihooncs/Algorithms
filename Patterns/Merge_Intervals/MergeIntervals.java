@@ -1,15 +1,8 @@
+package Patterns.Merge_Intervals;
+
 import java.util.*;
 
 class MergeIntervals {
-    class Interval {
-        int start;
-        int end;
-
-        public Interval(int start, int end) {
-            this.start = start;
-            this.end = end;
-        }
-    };
     /*
      *
      *
@@ -68,7 +61,6 @@ class MergeIntervals {
 
     public static void main(String[] args) {
         bruteForce();
-        solution();
     }
 
     public static void bruteForce() {
