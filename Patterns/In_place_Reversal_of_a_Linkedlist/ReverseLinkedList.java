@@ -1,19 +1,43 @@
 package Patterns.In_place_Reversal_of_a_Linkedlist;
 
+/*
+ * Problem Statement: Given the head of a Singly LinkedList, reverse the LinkedList. Write a function to return
+ * the new head of the reversed LinkedList.
+ */
 public class ReverseLinkedList {
     public static ListNode reverseBF(ListNode head) {
-        // TODO: Write your code here
+        if (head != null) {
+            ListNode temp = head.next;
+            head.next = null;
+            while (temp != null) {
+                ListNode next = temp.next;
+                temp.next = head;
+                head = temp;
+                temp = next;
+            }
+        }
         return head;
     }
 
     public static ListNode reverse(ListNode head) {
-        // TODO: Write your code here
-        return head;
+        ListNode current = head; // current node that we will be processing
+        ListNode previous = null; // previous node that we have processed
+        ListNode next = null; // will be used to temporarily store the next node
+
+        while (current != null) {
+            next = current.next; // temporarily store the next node
+            current.next = previous; // reverse the current node
+            previous = current; // before we move to the next node, point previous to the current node
+            current = next; // move on the next node
+        }
+        // after the loop current will be pointing to 'null' and 'previous' will be the new head
+        return previous;
     }
 
     public static void main(String[] args) {
         bruteForce();
-        //solution();
+        System.out.println();
+        solution();
     }
 
     public static void bruteForce() {
