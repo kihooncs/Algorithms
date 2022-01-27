@@ -1,6 +1,6 @@
 # Crucial Data Structures & Algorithms for Technical Interviews
 
-Author: Kihoon Lee (Computer Science Student @ University of Washington - Seattle)
+Author: Kihoon Lee (Computer Science Student at University of Washington-Seattle)
 
 Crucial Data Structures & Algorithms for Technical Interviews is a great resource to prepare coding interviews.
 
