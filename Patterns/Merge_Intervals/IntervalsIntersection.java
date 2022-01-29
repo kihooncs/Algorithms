@@ -20,7 +20,23 @@ public class IntervalsIntersection {
      */
     public static Interval[] mergeBF(Interval[] arr1, Interval[] arr2) {
         List<Interval> intervalsIntersection = new ArrayList<Interval>();
-        int i, j = 0;
+        int i = 0;
+        int j = 0;
+        while (i < arr1.length && j < arr2.length) {
+            Interval curr1 = arr1[i];
+            Interval curr2 = arr2[j];
+            if ((curr1.end >= curr2.start && curr2.start >= curr1.start)
+                    || (curr2.end >= curr2.start && curr2.end <= curr1.end)) {
+                int start = Math.max(curr1.start, curr2.start);
+                int end = Math.min(curr1.end, curr2.end);
+                intervalsIntersection.add(new Interval(start, end));
+            }
+            if (curr1.end >= curr2.end) {
+                j++;
+            } else {
+                i++;
+            }
+        }
         return intervalsIntersection.toArray(new Interval[intervalsIntersection.size()]);
     }
 
