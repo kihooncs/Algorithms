@@ -4,7 +4,7 @@ Author: Kihoon Lee (Computer Science Student at University of Washington-Seattle
 
 Crucial Data Structures & Algorithms for Technical Interviews is a great resource to prepare coding interviews.
 
-This REPO includes but no limited to fundamental and advanced algorithms, data structures, and technical question patterns.
+This REPO includes but not limited to fundamental and advanced algorithms, data structures, and technical question patterns.
 
 Huge thanks to [UW CSE 332: Data Structures and Parallelism](https://courses.cs.washington.edu/courses/cse332/21au/), [UW CSE 373: Data Structures and Algorithms](https://courses.cs.washington.edu/courses/cse373/19au/), [UC Berkeley CS 61B](https://inst.eecs.berkeley.edu/~cs61b/sp20/), and [Grokking the Coding Interview: Patterns for Coding Questions](https://www.educative.io/courses/grokking-the-coding-interview)
 
