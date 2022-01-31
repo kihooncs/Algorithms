@@ -7,12 +7,32 @@ import java.util.*;
 /*
  * Problem Statement: Given a binary tree, populate an array to represent its level-by-level traversal.
  * You should populate the values of all nodes of each level from left to right in separate sub-arrays.
+ *
+ * Score: 10/10
  */
 public class LevelOrderTraversal {
     public static List<List<Integer>> traverseBF(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        Queue<TreeNode> nodes = new LinkedList<>();
-        nodes.add(root);
+        if (root != null) {
+            Queue<TreeNode> nodes = new LinkedList<>();
+            nodes.add(root);
+            while (nodes.size() > 0) {
+                int currSize = nodes.size();
+                List<Integer> temp = new ArrayList<>();
+                while (currSize > 0) {
+                    TreeNode curr = nodes.remove();
+                    temp.add(curr.val);
+                    if (curr.left != null) {
+                        nodes.add(curr.left);
+                    }
+                    if (curr.right != null) {
+                        nodes.add(curr.right);
+                    }
+                    currSize--;
+                }
+                result.add(temp);
+            }
+        }
 
         return result;
     }
@@ -44,8 +64,8 @@ public class LevelOrderTraversal {
     }
 
     public static void main(String[] args) {
-        //bruteForce();
-        solution();
+        bruteForce();
+        //solution();
     }
 
     public static void bruteForce() {
