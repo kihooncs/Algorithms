@@ -4,7 +4,7 @@ Author: Kihoon Lee (Computer Science Student at University of Washington-Seattle
 
 Crucial Data Structures & Algorithms for Technical Interviews is a great resource to prepare coding interviews.
 
-This REPO includes but not limited to fundamental and advanced algorithms, data structures, and technical question patterns.
+This repository includes but not limited to fundamental and advanced algorithms, data structures, and technical question patterns.
 
 ## Coding Interview Patterns
 
@@ -24,6 +24,3 @@ This REPO includes but not limited to fundamental and advanced algorithms, data 
 14. K-way merge
 15. 0/1 Knapsack (Dynamic Programming
 16. Topological Sort (Graph)
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
