@@ -9,7 +9,7 @@ This repository includes but not limited to fundamental and advanced algorithms,
 1. Sliding Window
 2. Two Pointers
 3. Fast & Slow pointers
-4. Merge Intervals
+Cancel changes4. Merge Intervals
 5. Cyclic Sort
 6. In-place Reversal of a LinkedList
 7. Tree Breadth First Search
@@ -20,5 +20,5 @@ This repository includes but not limited to fundamental and advanced algorithms,
 12. Bitwise XOR
 13. Top 'K' Elements
 14. K-way merge
-15. 0/1 Knapsack (Dynamic Programming
+15. 0 / 1 Knapsack (Dynamic Programming
 16. Topological Sort (Graph)
