@@ -18,7 +18,7 @@ Cancel changes4. Merge Intervals
 10. Subsets
 11. Modified Binary Search
 12. Bitwise XOR
-13. Top 'K' Elements
+13. Top K Elements
 14. K-way merge
 15. 0 / 1 Knapsack (Dynamic Programming
 16. Topological Sort (Graph)
